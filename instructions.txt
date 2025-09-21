@@ -4,6 +4,8 @@ Crea el projecte Laraval
 
 Canviar a mysql. Incloure les dades de la base de dades
 
+Incloure idiones "es"
+
 composer update (no es necessari)
 
 npm install
@@ -12,3 +14,53 @@ php artisan key:generate
 
 -------------------------------------------------------------------------------
 
+INICI CURS
+
+php artisan make:model Product -m
+
+Omplir la Migració del model
+
+Al Model omplir els fillables
+
+Instal·lar filamen4 4
+
+https://filamentphp.com/docs/4.x/introduction/installation
+
+composer require filament/filament:"^4.0"
+
+php artisan filament:install --panels
+
+Panel ID admin
+
+Al DatabaSeeder hi ha un usuari generat per defecte. Per a crear-lo
+
+php artisan db:seed
+
+Podem crear l'susari aamb la instrcció de filament:
+
+php artisan make:filament-user
+
+Jordi Llobet
+jordillps@gmail.com
+12345678
+
+Model user afegir
+
+Sistema de seguretat de Filament (Poden accedir al panell complet de filament)
+
+use Filament\Panel;
+implements FilamentUser
+//Poden acceder al panell complet de Filament  todos los usuarios  
+    public function canAccessPanel(Panel $panel): bool
+    {
+        return true;
+    }
+
+Configuració  AdminPanelProvider:
+
+Afegir:
+registration()
+emailVerification()
+colors()
+
+---------------------------------------------------------------------------------------
