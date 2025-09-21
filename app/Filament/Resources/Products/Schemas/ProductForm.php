@@ -20,6 +20,7 @@ class ProductForm
                 TextInput::make('price')
                     ->required()
                     ->numeric()
+                    // ->suffix('€'),
                     ->suffix('€'),
             ]);
     }

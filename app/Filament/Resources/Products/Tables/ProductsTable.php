@@ -19,7 +19,7 @@ class ProductsTable
                 TextColumn::make('name')
                     ->searchable(),
                 TextColumn::make('price')
-                    ->money()
+                    ->money('EUR')
                     ->sortable(),
                 TextColumn::make('description')
                     ->limit(50),
