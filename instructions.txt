@@ -1,0 +1,14 @@
+Crea el projecte Laraval
+
+.env
+
+Canviar a mysql. Incloure les dades de la base de dades
+
+composer update (no es necessari)
+
+npm install
+
+php artisan key:generate
+
+-------------------------------------------------------------------------------
+
