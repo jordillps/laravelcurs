@@ -60,6 +60,8 @@ class AdminPanelProvider extends PanelProvider
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
             ])
+            // ->resourceEditPageRedirect('index')
+            // ->resourceCreatePageRedirect('index')
             ->authMiddleware([
                 Authenticate::class,
             ]);

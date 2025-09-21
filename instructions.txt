@@ -64,3 +64,33 @@ emailVerification()
 colors()
 
 ---------------------------------------------------------------------------------------
+REATLIZAR UN CRUD
+
+crear Prodcut Factory
+php artisan make:factory ProductFactory
+
+DatabaSeeder crear productes de prova
+
+php artisan migrate:fresh --seed
+
+php artisan make:filament-resource Product
+
+What is the title attribute for this model? 'Producto' Es pot deixar en blanc
+
+Would you like to generate a read-only view page for the resource? yes
+yes Cree les columnes uatomaticament
+
+Configurar que després editar/crear vagi a la llista de productes (CreateProduct, EditProduct)
+
+protected function getRedirectUrl(): string
+
+
+Es pot fer gloablament a AdminPanelProvider
+
+->resourceEditPageRedirect('index')
+->resourceCreatePageRedirect('index')
+
+Afegir "delete" a les taules: ProductTable
+
+ DeleteAction::make(),
+
