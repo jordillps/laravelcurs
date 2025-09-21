@@ -94,3 +94,15 @@ Afegir "delete" a les taules: ProductTable
 
  DeleteAction::make(),
 
+-------------------------------------------------------------------------------------
+
+CERCA, VALIDACIO, ORDENAR COLUMNES
+
+VALIDACIO
+
+Afegir al form requiered
+
+ProductsTable
+sorttable()
+
+-----------------------------------------------------------------------------------

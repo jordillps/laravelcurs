@@ -13,13 +13,14 @@ class ProductForm
         return $schema
             ->components([
                 TextInput::make('name')
-                    ->required(),
+                    ->required()
+                    ->unique(),
                 Textarea::make('description')
                     ->columnSpan('full'),
                 TextInput::make('price')
                     ->required()
                     ->numeric()
-                    ->prefix('$'),
+                    ->suffix('€'),
             ]);
     }
 }
