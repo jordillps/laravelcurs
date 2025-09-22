@@ -21,6 +21,19 @@ class ProductsTable
                 TextColumn::make('price')
                     ->money('EUR')
                     ->sortable(),
+                TextColumn::make('status')
+                    ->colors([
+                        'success' => 'in_stock',
+                        'warning' => 'out_of_stock',
+                        'danger' => 'discontinued',
+                    ])
+                    ->sortable(),
+                TextColumn::make('category.name')
+                    ->label('Categoría')
+                    ->sortable()
+                    ->searchable()
+                    ->sortable()
+                    ->searchable(),
                 TextColumn::make('description')
                     ->limit(50),
                 TextColumn::make('created_at')

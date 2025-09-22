@@ -108,3 +108,36 @@ sorttable()
 -----------------------------------------------------------------------------------
 
 COLUMNA EN FORMATO MONEDA, 
+
+
+--------------------------------------------------------------------------------------
+
+Crear Enum per l'estatus dels productes
+
+php artisan make:enum Enums/ProductStatusEnum --string
+
+Afegim el camp a la taula a través de la migració:
+
+php artisan make:migration add_status_to_products_table
+
+Omplir la migració amb un valor default 
+
+php artisan migrate
+
+Actualitzar la taula prodcutes i el formulari per afegir el nou camp "status"
+
+
+Creem el nou model "Categrory"
+
+php artisan make:model Category -m
+
+Afegim la "Category" a la taula de productes
+
+Afegir el nou camp a fillable
+
+Afegir a la taula i al form
+
+php artisan migrate
+
+
+------------------------------------------------------------------------------------------------
