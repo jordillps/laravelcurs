@@ -141,3 +141,11 @@ php artisan migrate
 
 
 ------------------------------------------------------------------------------------------------
+
+Creem una taula per les categories no un recurs
+
+php artisan make:filament-table CategoriesTable
+
+Afegir el codi a ProductsForm
+
+Si ho fem d'aquesta manera des de al editar un producte prodem accedir a la taula de categories
