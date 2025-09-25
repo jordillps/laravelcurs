@@ -149,3 +149,21 @@ php artisan make:filament-table CategoriesTable
 Afegir el codi a ProductsForm
 
 Si ho fem d'aquesta manera des de al editar un producte prodem accedir a la taula de categories
+
+
+-------------------------------------------------------------------------------------------------
+
+NEW RESOURCE CATEGORYES
+
+php artisan make:filament-resource Category --simple --generate
+
+--simple: edit forms en una finestra modal
+--generate: gerenar les columns des de la base de dades (normalment ho pregunta i posem yes)
+
+ToggleHidenByDefault : Podem escollir si volem que es visualitzi a la taula. Per defecte no es visualitza
+
+Afegir la relació Categories Model a Products
+
+Afegir a la taula catwegories un camp amb els prodcutes de cada  categoria
+
+-----------------------------------------------------------------------------------
