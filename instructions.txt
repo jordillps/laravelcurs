@@ -167,3 +167,40 @@ Afegir la relació Categories Model a Products
 Afegir a la taula catwegories un camp amb els prodcutes de cada  categoria
 
 -----------------------------------------------------------------------------------
+
+RELACIONS mANY TO mANY
+
+php artisan make:model Tag -m
+
+php artisan make:migration create_product_tag_table
+
+Afegim el camp nom a la migració
+
+php artisan migrate
+
+Afegim fillable i relacions al Model Tag
+
+Gerenem el nou recurs:
+
+php artisan make:filament-resource Tag --simple --generate
+
+Afegim el camp select multiple a prodcutform
+
+Una altra forma es crear una relació que ens proporciona Filament 
+
+php artisan make:filament-relation-manager ProductResurce tags name
+
+Products\ProductResurce
+
+No a totes les preguntes
+
+BelongsToMany
+
+Cal afegir-la a ProductResurce:
+ TagsRelationManager::class
+
+ Surt una taula d'etiquetes al editar productes
+
+Afegir TextColumn::make('tags.name') a ProductsTable
+
+-------------------------------------------------------------------------------------

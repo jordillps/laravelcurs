@@ -34,6 +34,12 @@ class ProductsTable
                     ->searchable()
                     ->sortable()
                     ->searchable(),
+                TextColumn::make('tags.name')
+                    ->label('Etiquetas')
+                    ->wrap()
+                    ->separator(', ')
+                    ->sortable()
+                    ->searchable(),
                 TextColumn::make('description')
                     ->limit(50),
                 TextColumn::make('created_at')

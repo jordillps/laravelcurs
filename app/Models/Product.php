@@ -23,4 +23,10 @@ class Product extends Model
     {
         return $this->belongsTo(Category::class);
     }
+
+    // A product can have many tags
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
+    }   
 }

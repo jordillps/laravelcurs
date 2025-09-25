@@ -43,10 +43,15 @@ class ProductForm
                 ModalTableSelect::make('categories')
                     ->label('Categorías')
                     ->relationship('category', 'name')
-                    ->tableConfiguration(CategoriesTable::class)
+                    ->tableConfiguration(CategoriesTable::class),
                     // ->columns(['name'])
                     // ->searchable()
                     // ->placeholder('Selecciona las categorías'),
+                Select::make('tags')
+                    ->label('Etiquetas')
+                    ->multiple()
+                    ->relationship('tags', 'name')
+                    ->placeholder('Selecciona las etiquetas'),
             ]);
     }
 }
