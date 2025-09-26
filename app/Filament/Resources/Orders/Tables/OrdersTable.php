@@ -2,10 +2,13 @@
 
 namespace App\Filament\Resources\Orders\Tables;
 
+use Filament\Actions\Action;
+use Filament\Actions\ActionGroup;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
+use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
@@ -79,8 +82,17 @@ class OrdersTable
             ])
             ->recordActions([
                 // ViewAction::make(),
-                EditAction::make(),
-            ])
+                ActionGroup::make([
+                    EditAction::make(),
+                    Action::make('Marca como Entregado')
+                        ->icon('heroicon-o-check-circle')
+                        ->action(function ($record) {
+                            $record->update(['status' => 'delivered']);
+                        })
+                        ->requiresConfirmation()
+                        ->visible(fn ($record) => $record->status !== 'cancelled' && $record->status !== 'delivered'),
+                    ])
+                ])
             ->toolbarActions([
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),

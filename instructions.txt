@@ -251,3 +251,17 @@ php artisan migrate
 php artisan make:filament-resource Order --generate
 
 ---------------------------------------------------------------------------------------
+
+ACCIONS BULK
+
+OrdersTable Actions
+
+Marcar como entregado
+
+ActionGroup 
+
+HeaderActions
+
+Es el mateix les accions apareixen al head de la taula
+
+----------------------------------------------------------------------------------------
