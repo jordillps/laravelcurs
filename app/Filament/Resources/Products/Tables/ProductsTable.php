@@ -25,32 +25,38 @@ class ProductsTable
                     ->searchable(),
                 TextColumn::make('price')
                     ->money('EUR')
+                    ->alignRight()
                     ->sortable(),
                 TextColumn::make('status')
+                    ->badge()
                     ->colors([
                         'success' => 'in_stock',
                         'warning' => 'out_of_stock',
                         'danger' => 'discontinued',
                     ])
+                    ->alignCenter()
                     ->sortable(),
                 TextColumn::make('category.name')
                     ->label('Categoría')
+                    ->alignRight()
                     ->sortable()
                     ->searchable()
                     ->sortable()
                     ->searchable(),
                 TextColumn::make('tags.name')
+                    ->badge()
                     ->label('Etiquetas')
                     ->wrap()
-                    ->separator(', ')
+                    ->alignRight()
+                    // ->separator(', ')
                     ->sortable()
                     ->searchable(),
                 TextColumn::make('description')
                     ->limit(50),
                 TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                    ->date('d-m-Y')
+                    ->sortable(),
+                    // ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable()

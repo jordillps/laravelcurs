@@ -212,3 +212,15 @@ Al arxiu ProductsTable incorporem un fltre per categories, status
 Creats entre 2 dates (Añadir un filtro al archivo ProductsTable que permita filtrar que productos se han creado entre una fecha inicial y fecha final)
 
 ----------------------------------------------------------------------------------------
+
+FORMATEAR COLUMNAS
+
+Afegir badge() a les columnes que interessi
+
+Afegir algun camp clicable per anar directamente editar
+
+Alinear els presu a la dreta
+
+Format a les dates
+
+--------------------------------------------------------------------------------------------
