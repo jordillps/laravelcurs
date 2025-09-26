@@ -236,3 +236,18 @@ CheckboxColumn::make('is_active')
 Es pot editar directament des de la taula
 
 ------------------------------------------------------------------------------------------
+
+AGRUPAR  O RESUMIR ELEMENTS DE LA taula
+
+Crear un nuevo modelo llamado "Order" y la migración
+
+php artisan make:model Order -m
+
+Crea el model la migració i afegeix camps a la migració
+
+php artisan migrate
+
+
+php artisan make:filament-resource Order --generate
+
+---------------------------------------------------------------------------------------
