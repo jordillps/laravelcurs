@@ -16,6 +16,7 @@ class Product extends Model
         'price',
         'status',
         'category_id',
+        'is_active',
     ];
 
     //relacion muchos a uno

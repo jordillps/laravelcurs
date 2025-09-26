@@ -224,3 +224,15 @@ Alinear els presu a la dreta
 Format a les dates
 
 --------------------------------------------------------------------------------------------
+
+EDITAR CAMPS DES DE LA taula
+
+ToggleColumn::make('is_active')
+
+o
+
+CheckboxColumn::make('is_active')
+
+Es pot editar directament des de la taula
+
+------------------------------------------------------------------------------------------

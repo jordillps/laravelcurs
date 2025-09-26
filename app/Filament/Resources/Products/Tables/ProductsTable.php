@@ -9,10 +9,12 @@ use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Filters\Filter;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use Filament\Forms\Components\DatePicker;
+use Filament\Tables\Columns\CheckboxColumn;
 use Illuminate\Database\Eloquent\Builder;
 
 class ProductsTable
@@ -34,6 +36,14 @@ class ProductsTable
                         'warning' => 'out_of_stock',
                         'danger' => 'discontinued',
                     ])
+                    ->alignCenter()
+                    ->sortable(),
+                // ToggleColumn::make('is_active')
+                //     ->label('Activo')
+                //     ->alignCenter()
+                //     ->sortable(),
+                CheckboxColumn::make('is_active')
+                    ->label('Activo')
                     ->alignCenter()
                     ->sortable(),
                 TextColumn::make('category.name')
