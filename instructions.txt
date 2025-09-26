@@ -204,3 +204,11 @@ Cal afegir-la a ProductResurce:
 Afegir TextColumn::make('tags.name') a ProductsTable
 
 -------------------------------------------------------------------------------------
+
+TABLAS , FILTROS , FECHAS
+
+Al arxiu ProductsTable incorporem un fltre per categories, status
+
+Creats entre 2 dates (Añadir un filtro al archivo ProductsTable que permita filtrar que productos se han creado entre una fecha inicial y fecha final)
+
+----------------------------------------------------------------------------------------
