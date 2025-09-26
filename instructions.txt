@@ -265,3 +265,13 @@ HeaderActions
 Es el mateix les accions apareixen al head de la taula
 
 ----------------------------------------------------------------------------------------
+
+Com modificar el numeros de columnes dels formularis
+
+Format amb Section: Order form
+
+Fommat amb Fieldset
+
+Format amb Taps 
+
+---------------------------------------------------------------------------------------

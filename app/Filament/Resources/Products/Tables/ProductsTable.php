@@ -61,8 +61,8 @@ class ProductsTable
                     // ->separator(', ')
                     ->sortable()
                     ->searchable(),
-                TextColumn::make('description')
-                    ->limit(50),
+                // TextColumn::make('description')
+                //     ->limit(50),
                 TextColumn::make('created_at')
                     ->date('d-m-Y')
                     ->sortable(),

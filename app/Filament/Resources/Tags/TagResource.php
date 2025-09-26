@@ -22,6 +22,12 @@ class TagResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
+    protected static ?string $navigationLabel = 'Etiquetas';
+
+    protected static ?string $modelLabel = 'Etiqueta';
+
+    protected static ?string $pluralModelLabel = 'Etiquetas';
+
     public static function form(Schema $schema): Schema
     {
         return $schema

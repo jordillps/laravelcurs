@@ -23,7 +23,7 @@ class OrderResource extends Resource
     protected static ?string $modelLabel = 'Pedido';
 
     protected static ?string $pluralModelLabel = 'Pedidos';
-
+    
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
     protected static ?int $navigationSort = 2;
