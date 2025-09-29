@@ -31,8 +31,10 @@ class AdminPanelProvider extends PanelProvider
             ->registration()
             ->emailVerification()
             // ->topNavigation()
+            ->font('montserrat')
             ->colors([
-                'primary' => Color::Amber,
+                'primary' => Color::Blue,
+                // 'primary' => '#226600',
                 'secondary' => Color::Gray,
                 'success' => Color::Green,
                 'danger' => Color::Red,
@@ -63,6 +65,7 @@ class AdminPanelProvider extends PanelProvider
             ])
             // ->resourceEditPageRedirect('index')
             // ->resourceCreatePageRedirect('index')
+            ->viteTheme('resources/css/filament/admin/theme.css')
             ->authMiddleware([
                 Authenticate::class,
             ]);
