@@ -275,3 +275,27 @@ Fommat amb Fieldset
 Format amb Taps 
 
 ---------------------------------------------------------------------------------------
+
+ORDENAR PRODUCTES, ICONS, TOP-SIDE NAVIGATION
+
+topnavigation a l'arxiu a AdminPanelProvider
+
+Ordre dels items a la barra de navegació
+
+protected static ?int $navigationSort = 2
+
+Agrupar els items del la barra de navegació
+
+protected static UnitEnum|string|null $navigationGroup = 'Gestión de Productos';
+
+Caniar els icons Anar a l'arxiu Resource de cada model
+
+Afegir un badge am el número de items de cada element de la navegació 
+
+Generar PAGINES ESTATIQUES com les pàgines legals
+
+php artisan make:filament-page ContactUs
+
+
+------------------------------------------------------------------------------------------------
+

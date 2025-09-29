@@ -5,6 +5,7 @@ namespace App\Filament\Resources\Categories;
 use App\Filament\Resources\Categories\Pages\ManageCategories;
 use App\Models\Category;
 use BackedEnum;
+use UnitEnum;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
@@ -20,13 +21,25 @@ class CategoryResource extends Resource
 {
     protected static ?string $model = Category::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::BuildingStorefront;
 
     protected static ?string $navigationLabel = 'Categorías';
 
     protected static ?string $modelLabel = 'Categoría';
 
     protected static ?string $pluralModelLabel = 'Categorías';
+
+    // Ordre als items de la barra de navegación
+    protected static ?int $navigationSort = 2;
+
+    //agrupar els items del la barra de navegació
+    protected static UnitEnum|string|null $navigationGroup = 'Gestión de Productos';
+
+    // Badge con el número de productos
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
 
     public static function form(Schema $schema): Schema
     {

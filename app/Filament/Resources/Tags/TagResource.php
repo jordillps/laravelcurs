@@ -5,6 +5,7 @@ namespace App\Filament\Resources\Tags;
 use App\Filament\Resources\Tags\Pages\ManageTags;
 use App\Models\Tag;
 use BackedEnum;
+use UnitEnum;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
@@ -20,13 +21,25 @@ class TagResource extends Resource
 {
     protected static ?string $model = Tag::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::BookmarkSquare;
 
     protected static ?string $navigationLabel = 'Etiquetas';
 
     protected static ?string $modelLabel = 'Etiqueta';
 
     protected static ?string $pluralModelLabel = 'Etiquetas';
+
+    // Ordre als items de la barra de navegació
+    protected static ?int $navigationSort = 3;
+
+    //agrupar els items del la barra de navegació
+    protected static UnitEnum|string|null $navigationGroup = 'Gestión de Productos';
+
+    // Badge con el número de productos
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
 
     public static function form(Schema $schema): Schema
     {
