@@ -16,7 +16,7 @@ class OrderForm
         return $schema
             // ->columns(3)
             ->components([
-                Section::make('Detalles del Pedido')
+                Section::make(__('Detalles del Pedido'))
                     ->columnSpanFull()
                     ->schema([
                         TextInput::make('order_number')

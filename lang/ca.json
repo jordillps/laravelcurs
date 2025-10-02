@@ -1,0 +1,16 @@
+{
+    "name": "Nom",
+    "price": "Preu",
+    "active": "Està actiu",
+    "status": "Estat",
+    "created_at": "Creat el",
+    "updated_at": "Actualitzat el",
+    "category": "Categoria",
+    "actions": "Accions",
+    "tags": "Etiquetes",
+    "email": "Correu electrònic",
+    "password": "Contrasenya",
+    "Detalles del Pedido": "Detalls de la comanda",
+    "Notas Adicionales": "Notes addicionals"
+
+}

@@ -24,12 +24,15 @@ class ProductsTable
         return $table
             ->columns([
                 TextColumn::make('name')
+                    ->label(__('name'))
                     ->searchable(),
                 TextColumn::make('price')
+                    ->label(__('price'))
                     ->money('EUR')
                     ->alignRight()
                     ->sortable(),
                 TextColumn::make('status')
+                    ->label(__('status'))
                     ->badge()
                     ->colors([
                         'success' => 'in_stock',
@@ -43,11 +46,11 @@ class ProductsTable
                 //     ->alignCenter()
                 //     ->sortable(),
                 CheckboxColumn::make('is_active')
-                    ->label('Activo')
+                    ->label(__('active'))
                     ->alignCenter()
                     ->sortable(),
                 TextColumn::make('category.name')
-                    ->label('Categoría')
+                    ->label(__('category'))
                     ->alignRight()
                     ->sortable()
                     ->searchable()
@@ -55,7 +58,7 @@ class ProductsTable
                     ->searchable(),
                 TextColumn::make('tags.name')
                     ->badge()
-                    ->label('Etiquetas')
+                    ->label(__('tags'))
                     ->wrap()
                     ->alignRight()
                     // ->separator(', ')
@@ -64,10 +67,12 @@ class ProductsTable
                 // TextColumn::make('description')
                 //     ->limit(50),
                 TextColumn::make('created_at')
+                    ->label(__('created_at'))
                     ->date('d-m-Y')
                     ->sortable(),
                     // ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('updated_at')
+                    ->label(__('updated at'))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),

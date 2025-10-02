@@ -323,4 +323,12 @@ https://filamentphp.com/plugins?search=themes
 
 --------------------------------------------------------------------------------------------------------------------
 
+MULTILANGUAGE
 
+php artisan lang:publish
+
+php artisan vendor:publish --tag=filament-panels-translations
+
+Crear un arxiu ca.jon a la carpeta lang
+
+---------------------------------------------------------------------------------------------------------------------
