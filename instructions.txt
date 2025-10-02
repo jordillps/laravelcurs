@@ -332,3 +332,14 @@ php artisan vendor:publish --tag=filament-panels-translations
 Crear un arxiu ca.jon a la carpeta lang
 
 ---------------------------------------------------------------------------------------------------------------------
+
+VIEW PAGINES
+
+Instrucció quan el Recurs ja existeix
+
+php artisan make:filament-page ViewUser --resource=UserResource --type=ViewRecord
+
+Arxius infolist
+
+-----------------------
+
