@@ -341,5 +341,13 @@ php artisan make:filament-page ViewUser --resource=UserResource --type=ViewRecor
 
 Arxius infolist
 
------------------------
+-------------------------------------------------------------------------------------------
 
+Global Search in Multiple Resources
+
+Afegir a ProductResource $recordTitleAttribute
+
+protected static ?string $recordTitleAttribute = 'name';
+
+
+------------------------------------------------------------------------------------------------

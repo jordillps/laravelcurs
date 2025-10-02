@@ -17,6 +17,7 @@ use UnitEnum;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Model;
 
 class ProductResource extends Resource
 {
@@ -24,7 +25,8 @@ class ProductResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::Bookmark;
 
-    protected static ?string $recordTitleAttribute = 'Producto';
+     //Añafir atributo para la búsqueda
+    protected static ?string $recordTitleAttribute = 'name';
 
     protected static ?string $navigationLabel = 'Productos';
 
@@ -76,5 +78,18 @@ class ProductResource extends Resource
             'view' => ViewProduct::route('/{record}'),
             'edit' => EditProduct::route('/{record}/edit'),
         ];
+    }
+
+    //Va a la página de edición del producto al hacer clic en el resultado de la búsqueda global
+    public static function getGlobalSearchResultUrl(Model $record): string
+    {
+        return ProductResource::getUrl('edit', ['record' => $record]);
+    }
+
+    //Atributos que se van a buscar en la búsqueda global
+    //Añadido category.name para buscar por categoría
+    public static function getGloballySearchableAttributes(): array
+    {
+        return ['name','category.name'];
     }
 }
