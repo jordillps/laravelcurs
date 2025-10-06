@@ -351,3 +351,25 @@ protected static ?string $recordTitleAttribute = 'name';
 
 
 ------------------------------------------------------------------------------------------------
+
+Dashboard Widgets: Stats, Charts, Tables and Header/Footer
+
+php artisan make:filament-widget RevenueToday --stats-overview
+
+Crea el l'arxiu RevenueToday.php
+
+php artisan make:filament-widget OrdersPerDayChart --chart
+
+Crea el l'arxiu OrdersPerDayChart.php
+
+composer require flowframe/laravel-trend
+
+https://filamentphp.com/docs/4.x/widgets/charts
+
+
+php artisan make:filament-widget LatestOrders --table
+
+Crea la'arxiu LatestOrders.php 
+
+
+-----------------------------------------------------------------------------

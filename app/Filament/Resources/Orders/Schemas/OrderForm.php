@@ -2,7 +2,7 @@
 
 namespace App\Filament\Resources\Orders\Schemas;
 
-use Filament\Forms\Components\DateTimePicker;
+use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
@@ -58,7 +58,7 @@ class OrderForm
                             ])
                             ->default('pending')
                             ->required(),
-                        DateTimePicker::make('order_date')
+                        DatePicker::make('order_date')
                             ->label('Fecha del Pedido')
                             ->default(now())
                             ->required(),
