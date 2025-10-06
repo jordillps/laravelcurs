@@ -373,3 +373,19 @@ Crea la'arxiu LatestOrders.php
 
 
 -----------------------------------------------------------------------------
+
+Dynamic Forms: Hidden, Disabled and "Reactive" Options
+
+Definició automàtica del slug a partir del nom del producte: ProductForm.php
+
+php artisan make:migration add_status_to_products_table
+
+Product fillable "slug" 
+
+ProductFactory afegir slug
+
+A ProdcutForm introduim el nou cmap slug que es genera automàticament 
+
+Disable al editar ->disabledOn('edit')
+
+----------------------------------------------------------------------------------------

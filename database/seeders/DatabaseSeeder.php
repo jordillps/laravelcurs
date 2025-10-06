@@ -29,6 +29,6 @@ class DatabaseSeeder extends Seeder
         ]);
 
         //Crear 50 productos de prueba
-        \App\Models\Product::factory(50)->create();
+        \App\Models\Product::factory(20)->create();
     }
 }

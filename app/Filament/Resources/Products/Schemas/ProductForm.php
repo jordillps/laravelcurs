@@ -11,6 +11,9 @@ use App\Enums\ProductStatusEnum;
 use Filament\Forms\Components\ModalTableSelect;
 use Filament\Tables\Table;
 use App\Filament\Tables\CategoriesTable;
+// Importing the Str facade for string manipulation
+use Illuminate\Support\Str;
+use Filament\Schemas\Components\Utilities\Set;
 
 class ProductForm
 {
@@ -20,7 +23,16 @@ class ProductForm
             ->components([
                 TextInput::make('name')
                     ->required()
+                    ->live(onBlur: true)
+                    ->afterStateUpdated(function (Set $set, $state) {
+                            $set('slug', Str::slug($state));
+                    })
+                    ->disabledOn('edit')
                     ->unique(),
+                TextInput::make('slug')
+                    ->required()
+                    ->disabledOn('edit')
+                    ->helperText('El slug se genera automáticamente a partir del nombre.'),
                 Textarea::make('description')
                     ->columnSpan('full'),
                 TextInput::make('price')
