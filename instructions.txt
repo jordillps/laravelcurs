@@ -449,4 +449,17 @@ Hi ha la possibilitat d'uutilitzar app Autentication
 
 ------------------------------------------------------------------------------------------------------------
 
+APP Autentication
 
+
+AppAuthentication::make()  a AdminPanelProvider
+
+php artisan make:migration add_has_app_authentication_to_users_table
+
+Afegir el camp a la migració
+
+Afegir cast, Hidden i noves funcions al model User
+
+Cal descarrger Google Autenticator que es de pagamnent
+
+-----------------------------------------------------------------------------------------------------------

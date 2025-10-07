@@ -2,6 +2,7 @@
 
 namespace App\Providers\Filament;
 
+use Filament\Auth\MultiFactor\App\AppAuthentication;
 use Filament\Auth\MultiFactor\Email\EmailAuthentication;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
@@ -32,7 +33,7 @@ class AdminPanelProvider extends PanelProvider
             ->registration()
             ->emailVerification()
             ->profile()
-            ->multiFactorAuthentication([EmailAuthentication::make()])
+            ->multiFactorAuthentication([EmailAuthentication::make(), AppAuthentication::make()])
             // ->topNavigation()
             ->font('montserrat')
             ->colors([
