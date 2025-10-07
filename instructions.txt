@@ -401,3 +401,12 @@ Arxiu CustomData
 Vista: resoureces/views/filament/pages/custom-data
 
 -------------------------------------------------------------------------------------------
+
+Nested Resources
+
+php artisan make:filament-resource User --generate
+
+Se creem un resource Orders --nested (caldria esborrar prmer l'existent) podem fer que es visualitzin les comandes de cada usuari al editar un usuari
+
+
+---------------------------------------------------------------
