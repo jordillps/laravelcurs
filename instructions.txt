@@ -389,3 +389,15 @@ A ProdcutForm introduim el nou cmap slug que es genera automàticament
 Disable al editar ->disabledOn('edit')
 
 ----------------------------------------------------------------------------------------
+
+Custom Data API
+
+Documentació CUSTOM DATA
+
+php artisan make:filament-page CustomData
+
+Arxiu CustomData
+
+Vista: resoureces/views/filament/pages/custom-data
+
+-------------------------------------------------------------------------------------------
