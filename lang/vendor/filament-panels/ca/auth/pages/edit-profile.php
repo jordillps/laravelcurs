@@ -4,6 +4,10 @@ return [
 
     'label' => 'Perfil',
 
+    'multi_factor_authentication' => [
+        'label' => 'Autenticació multifactor (2FA)',
+    ],
+
     'form' => [
 
         'email' => [

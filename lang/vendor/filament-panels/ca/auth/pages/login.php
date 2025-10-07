@@ -6,6 +6,7 @@ return [
 
     'heading' => 'Accediu al vostre compte',
 
+
     'actions' => [
 
         'register' => [
@@ -16,6 +17,8 @@ return [
         'request_password_reset' => [
             'label' => 'Heu oblidat la vostra contrasenya?',
         ],
+
+        'authenticate' => 'Confirma per accedir',
 
     ],
 
@@ -37,6 +40,30 @@ return [
 
             'authenticate' => [
                 'label' => 'Accedir',
+            ],
+
+        ],
+
+    ],
+
+    'multi_factor' => [
+        //traducir al català
+        'heading' => 'Verifica la teva identitat',
+
+        'subheading' => 'Per continuar amb l\'inici de sessió, hauràs de verificar la teva identitat.',
+
+        'form' => [
+
+            'provider' => [
+                'label' => 'Com t\'agradaria verificar-te?',
+            ],
+
+            'actions' => [
+
+                'authenticate' => [
+                    'label' => 'Confirma per accedir',
+                ],
+
             ],
 
         ],
