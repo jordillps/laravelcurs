@@ -49,6 +49,7 @@ class UserResource extends Resource
     {
         return [
             'index' => ListUsers::route('/'),
+            //Si volem eliniar craer usuarios
             'create' => CreateUser::route('/create'),
             'edit' => EditUser::route('/{record}/edit'),
         ];

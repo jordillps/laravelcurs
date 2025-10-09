@@ -13,6 +13,7 @@ class ListUsers extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
+            //Si volem eliniar craer usuarios
             CreateAction::make(),
         ];
     }

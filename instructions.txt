@@ -463,3 +463,23 @@ Afegir cast, Hidden i noves funcions al model User
 Cal descarrger Google Autenticator que es de pagamnent
 
 -----------------------------------------------------------------------------------------------------------
+
+Restrict Add/Edit/Delete Actions and Buttons
+
+A l'arxiu UserResource comentat com eliminar "crear user"
+
+Cal esborrar l'arxius pages/CreateUser
+
+ListUsers he comentat que casl fer per esborrar Crear Usuaris
+
+Delete Users està a la pàgina EditUser
+
+Bulk Actions de la taula de Users
+
+Botons Edit / Delete / Create amb condicions
+
+php artisan make:policy UserPolicy --model=User
+
+Modificar les funcions segons necessitats
+
+------------------------------------------------------------------------------------------------------
