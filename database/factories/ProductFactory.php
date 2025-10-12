@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Company;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -22,6 +23,6 @@ class ProductFactory extends Factory
             'slug' => $this->faker->unique()->slug(),
             'description' => $this->faker->sentence(),
             'price' => $this->faker->randomFloat(2, 1, 100),
-        ];
+            'company_id' => Company::inRandomOrder()->first()->id,        ];
     }
 }

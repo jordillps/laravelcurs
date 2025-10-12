@@ -2,7 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\Company;
 use App\Models\User;
+use App\Models\Category;
+use App\Models\Tag;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -27,6 +30,36 @@ class DatabaseSeeder extends Seeder
             'email' => 'jordillps@gmail.com',
             'password' => bcrypt('12345678'),
         ]);
+
+        Company::factory()->create([
+            'name' => 'Google',
+        ]);
+
+        Company::factory()->create([
+            'name' => 'Microsoft',
+        ]);
+
+        Category::factory()->create([
+            'name' => 'Libros',
+            'company_id' => 1,
+        ]);
+
+        Category::factory()->create([
+            'name' => 'Revistas',
+            'company_id' => 2,
+        ]);
+
+         Tag::factory()->create([
+            'name' => 'Bestseller',
+            'company_id' => 1,
+        ]);
+
+        Tag::factory()->create([
+            'name' => 'Tendencia',
+            'company_id' => 2,
+        ]);
+
+
 
         //Crear 50 productos de prueba
         \App\Models\Product::factory(20)->create();

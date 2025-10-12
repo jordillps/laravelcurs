@@ -18,6 +18,7 @@ class Product extends Model
         'status',
         'category_id',
         'is_active',
+        'company_id'
     ];
 
     //relacion muchos a uno
@@ -30,5 +31,11 @@ class Product extends Model
     public function tags()
     {
         return $this->belongsToMany(Tag::class);
-    }   
+    }
+    
+    //A belongs to a company
+    public function company()
+    {
+        return $this->belongsTo(Company::class);
+    }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Providers\Filament;
 
+use App\Models\Company;
 use Filament\Auth\MultiFactor\App\AppAuthentication;
 use Filament\Auth\MultiFactor\Email\EmailAuthentication;
 use Filament\Http\Middleware\Authenticate;
@@ -20,6 +21,7 @@ use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use App\Http\Middleware\ApplyTenantScopes;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -33,6 +35,10 @@ class AdminPanelProvider extends PanelProvider
             ->registration()
             ->emailVerification()
             ->profile()
+            ->tenant(Company::class)
+             ->tenantMiddleware([
+                    ApplyTenantScopes::class,
+                    ], isPersistent: true)
             ->multiFactorAuthentication([EmailAuthentication::make(), AppAuthentication::make()])
             // ->topNavigation()
             ->font('montserrat')

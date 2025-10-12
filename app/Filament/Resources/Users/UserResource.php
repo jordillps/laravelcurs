@@ -28,6 +28,9 @@ class UserResource extends Resource
 
     protected static ?string $pluralModelLabel = 'Usuarios';
 
+    // Especificar la relación de ownership para tenants
+    protected static ?string $tenantOwnershipRelationshipName = 'companies';
+
     public static function form(Schema $schema): Schema
     {
         return UserForm::configure($schema);

@@ -14,12 +14,14 @@ class Order extends Model
         'order_number',
         'user_id',
         'product_id',
+        'company_id',
         'total_amount',
         'status',
         'order_date',
         'notes',
         'billing_address',
         'shipping_address',
+
     ];
 
     protected $casts = [
@@ -39,5 +41,11 @@ class Order extends Model
     public function product(): BelongsTo
     {
         return $this->belongsTo(Product::class);
+    }
+
+    //A belongs to a company
+    public function company()
+    {
+        return $this->belongsTo(Company::class);
     }
 }

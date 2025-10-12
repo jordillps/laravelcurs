@@ -483,3 +483,54 @@ php artisan make:policy UserPolicy --model=User
 Modificar les funcions segons necessitats
 
 ------------------------------------------------------------------------------------------------------
+
+Multi-Tenancy in Filament 4
+
+Relació molts a molts entre users i companies 
+
+php artisan make:model Company -m
+
+php artisan make:migration create_company_user_table
+
+Revisem migracions i models
+
+php artisan migrate
+
+AdminPanelProvider afegir tenant
+
+Obtenim l'error: Call to undefined method App\Models\User::getTenants()
+
+Afegir funcions al model User
+
+Implements HasTenant i les noves funcions
+
+Obtenim l'error 404 not found
+
+Hem d'afegir el camp "company_id" a tots els models que poden pertanyer a diferents companyies.
+
+Ho podem fer amb una única migració:
+
+php artisan make:migration add_company_id_to_tables
+
+Afegir  a cadascun dels models (products,categories, tags, orders) la relació BelongsTo
+
+php artisan make:factory CompanyFactory
+
+php artisan make:factory TagFactory
+
+php artisan make:factory CategoryFactory
+
+
+php artisan migrate:fresh --seed
+
+Com que només els models amb recursos que existeixen al panell s'aplica automàticament a tenant actual, 
+pot ser útil aplicar un abast d'un tenant addicional a altres models Eloquent mentre s'utilitzen al vostre panell. 
+Això us permetria oblidar-vos d'aplicar les consultes al tenant actual i, en canvi, aplicar l'abast automàticament. 
+Per fer-ho, podeu crear una nova classe de middleware com ara ApplyTenantScopes.
+
+php artisan make:middleware ApplyTenantScopes
+
+
+Cal registrar el middleware a AdminPanelProvider
+
+---------------------------------------------------------------------------------------

@@ -11,8 +11,12 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Filament\Panel;
 use Filament\Auth\MultiFactor\App\Contracts\HasAppAuthentication;
+use Filament\Models\Contracts\HasTenants;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use App\Models\Company;
+use \Illuminate\Support\Collection;
 
-class User extends Authenticatable implements FilamentUser, HasAppAuthentication, HasEmailAuthentication
+class User extends Authenticatable implements FilamentUser, HasTenants, HasAppAuthentication, HasEmailAuthentication
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
@@ -118,7 +122,22 @@ class User extends Authenticatable implements FilamentUser, HasAppAuthentication
         $this->save();
     }
 
-   
 
-    
+    //Tenants Methods
+
+    public function companies(): BelongsToMany
+    {
+        return $this->belongsToMany(Company::class);
+    }
+
+    //CanAccessCompany
+    public function canAccessTenant($tenant): bool
+    {
+        return $this->companies()->where('companies.id', $tenant->id)->exists(); // Check if the user is associated with the given tenant    
+    }
+
+    public function getTenants(Panel $panel): array|Collection
+    {
+        return $this->companies; // Return the collection of tenants (companies) as a collection
+    }
 }
