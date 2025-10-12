@@ -534,3 +534,32 @@ php artisan make:middleware ApplyTenantScopes
 Cal registrar el middleware a AdminPanelProvider
 
 ---------------------------------------------------------------------------------------
+
+Multiple Panels: Admin and Accountant
+
+Diferents panells per a diferents dols d'usuari
+
+
+php artisan make:filament-panel Accountant
+
+Cren un AccountantAdminProvider nou
+
+http://127.0.0.1:8000/accountant/login
+
+
+Si volem que el accountant pugui verue les comandes
+
+php artisan make:filament-resource Order --generate
+
+Ens demana a quin panell volem incloure el nou recurs: accountant
+
+Per accedir podem utilizar el mateix usuari
+
+php artisan make:policy OrderPolicy --model=Order
+
+Implementem la funció ViewAny
+
+També implementem la funció canAccessPanel del Model "User"
+
+
+---------------------------------------------------------------------------------------

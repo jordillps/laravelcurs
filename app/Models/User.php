@@ -67,6 +67,15 @@ class User extends Authenticatable implements FilamentUser, HasTenants, HasAppAu
         //Poden acceder al panel entero de Filament todos los usuarios
          // return str_ends_with($this->email, '');
         return true; //Cualquier usuario puede acceder a Filament
+
+        // if ($panel->getId() === 'admin' && $this->is_admin){
+        //     return true;
+        // }
+        // // return true if el panel actual es accountant y el usuario es accountant o admin
+        // if ($panel->getId() === 'accountant' && ($this->is_accountant || $this->is_admin)) {
+        //     return true;
+        // }
+        // return false;
     }
 
 
