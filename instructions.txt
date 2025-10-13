@@ -563,3 +563,44 @@ També implementem la funció canAccessPanel del Model "User"
 
 
 ---------------------------------------------------------------------------------------
+
+Shield Plugin for Roles and Permissions
+
+composer require bezhansalleh/filament-shield
+
+php artisan vendor:publish --tag="filament-shield-config"
+
+// config/filament-shield.php
+return [
+    // ...
+    'auth_provider_model' => 'App\\Models\\User',
+    // ...
+];
+
+Al Model "User"
+
+use Spatie\Permission\Traits\HasRoles;
+
+Use HasRoles
+
+Afegir a AdminPanelProvider el plugin
+
+php artisan shield:setup
+
+composer update
+
+php artisan vendor:publish --tag="filament-shield-translations"
+
+crear una nova carpeta "ca"
+
+Copiar-hi l'arxiu: filament-shield i fer les traduccions
+
+Cal desabilitar el Multitenancy de AdminPanelProvider
+
+Directament podem afegir el camp "Role" al recurs User - UserForm
+
+Crear un usuari super-admin
+
+php artisan shield:super-admin --user=2
+
+-----------------------------------------------------------------------

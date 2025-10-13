@@ -15,11 +15,12 @@ use Filament\Models\Contracts\HasTenants;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use App\Models\Company;
 use \Illuminate\Support\Collection;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable implements FilamentUser, HasTenants, HasAppAuthentication, HasEmailAuthentication
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
-    use HasFactory, Notifiable;
+    use HasFactory, HasRoles, Notifiable;
 
     /**
      * The attributes that are mass assignable.

@@ -35,10 +35,10 @@ class AdminPanelProvider extends PanelProvider
             ->registration()
             ->emailVerification()
             ->profile()
-            ->tenant(Company::class)
-             ->tenantMiddleware([
-                    ApplyTenantScopes::class,
-                    ], isPersistent: true)
+            // ->tenant(Company::class)
+            //  ->tenantMiddleware([
+            //         ApplyTenantScopes::class,
+            //         ], isPersistent: true)
             ->multiFactorAuthentication([EmailAuthentication::make(), AppAuthentication::make()])
             // ->topNavigation()
             ->font('montserrat')
@@ -76,6 +76,9 @@ class AdminPanelProvider extends PanelProvider
             // ->resourceEditPageRedirect('index')
             // ->resourceCreatePageRedirect('index')
             ->viteTheme('resources/css/filament/admin/theme.css')
+            ->plugins([
+                \BezhanSalleh\FilamentShield\FilamentShieldPlugin::make(),
+            ])
             ->authMiddleware([
                 Authenticate::class,
             ]);
